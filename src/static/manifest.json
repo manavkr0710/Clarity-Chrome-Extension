@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "Clarity",
+    "description": "Protect national security and create a conscious online community by combating social media misinformation, propaganda, and digital manipulation.",
+    "version": "1.0.0",
+    "action" : {
+        "default_popup": "popup.html",
+        "default_title": "Clarity",
+        "default_icon" : "favicon-32x32.png"
+    },
+    "chrome_url_overrides": {
+        "newtab": "newTab.html"
+    },
+    "permissions": [
+        "tabs",
+        "bookmarks",
+        "storage",
+        "identity"
+    ],
+    "icons": {
+        "16" : "favicon-32x32.png",
+        "48" : "favicon-32x32.png",
+        "128" : "favicon-32x32.png"
+    },
+    "options_page": "options.html",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript.js"]
+        }
+    ]
+}
